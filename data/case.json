@@ -1,0 +1,26 @@
+{
+  "records": [
+    {
+      "id": "WA-1",
+      "text": "东支线 2 号管段已冲洗，持续时间未记录。",
+      "kind": "construction-log"
+    },
+    {
+      "id": "WA-2",
+      "text": "试压报告覆盖原编号 L-2A，压力稳定 30 分钟。",
+      "kind": "test-report"
+    },
+    {
+      "id": "WA-3",
+      "text": "图纸变更：原 L-2A 拆为 L-2A-1 与 L-2A-2，接头位置不变。",
+      "kind": "revision"
+    }
+  ],
+  "criteria": [
+    {
+      "id": "AC-1",
+      "text": "试压须覆盖拟接管的完整管段。"
+    }
+  ],
+  "case_id": "waterworks-1"
+}
