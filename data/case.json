@@ -1,26 +1,127 @@
 {
+  "case_id": "case-waterworks-acceptance",
   "records": [
     {
-      "id": "WA-1",
-      "text": "东支线 2 号管段已冲洗，持续时间未记录。",
-      "kind": "construction-log"
+      "id": "WA-D1",
+      "kind": "drawing",
+      "text": "L2A从K0到K100含J50；八月一日改号为L2A1（K0-K50）和L2A2（K50-K100），未施工。"
     },
     {
-      "id": "WA-2",
-      "text": "试压报告覆盖原编号 L-2A，压力稳定 30 分钟。",
-      "kind": "test-report"
+      "id": "WA-T1",
+      "kind": "pressure-test",
+      "text": "七月三十一日L2A含当时J50试压0.8MPa连续30分钟，无渗漏，不含支管B。"
     },
     {
-      "id": "WA-3",
-      "text": "图纸变更：原 L-2A 拆为 L-2A-1 与 L-2A-2，接头位置不变。",
-      "kind": "revision"
-    }
-  ],
-  "criteria": [
+      "id": "WA-C1",
+      "kind": "construction",
+      "text": "八月二日J50切断重接；下午只对L2A1复测0.8MPa30分钟，未测L2A2侧接口。"
+    },
     {
-      "id": "AC-1",
-      "text": "试压须覆盖拟接管的完整管段。"
+      "id": "WA-F1",
+      "kind": "flushing",
+      "text": "八月三日L2A1冲洗完成，每秒6升，持续时间未记。"
+    },
+    {
+      "id": "WA-F2",
+      "kind": "flushing",
+      "text": "L2A2每秒6升连续冲洗25分钟。"
+    },
+    {
+      "id": "WA-F3",
+      "kind": "correction",
+      "text": "WA-F2在第十二分钟停流两分钟，恢复后冲洗十三分钟；累计25不是连续25。"
+    },
+    {
+      "id": "WA-N1",
+      "kind": "request",
+      "text": "村运维认为全线无渗漏，应可先接管，无新增试验。"
+    },
+    {
+      "id": "WA-T2",
+      "kind": "pressure-test",
+      "text": "八月四日K50-K100及J50两侧接口试压0.8MPa30分钟无渗漏，上游隔离阀V0有效。"
+    },
+    {
+      "id": "WA-E1",
+      "kind": "construction",
+      "text": "八月五日B接入J100，L2A1未施工，L2A2与B共用J100新增施工。"
+    },
+    {
+      "id": "WA-H1",
+      "kind": "handover",
+      "text": "八月四日村签收L2A1，据WA-T2及监理补记连续冲洗22分钟，不含L2A2。"
+    },
+    {
+      "id": "WA-R1",
+      "kind": "supervision",
+      "text": "WA-F1计时原表证实连续22分钟，仅适用L2A1。"
     }
   ],
-  "case_id": "waterworks-1"
+  "objects": {
+    "segments": [
+      {
+        "id": "L2A1",
+        "from": "K0",
+        "to": "K50"
+      },
+      {
+        "id": "L2A2",
+        "from": "K50",
+        "to": "K100"
+      },
+      {
+        "id": "B",
+        "from": "J100",
+        "to": "B20"
+      }
+    ],
+    "joints": [
+      {
+        "id": "J50",
+        "joins": [
+          "L2A1",
+          "L2A2"
+        ]
+      },
+      {
+        "id": "J100",
+        "joins": [
+          "L2A2",
+          "B"
+        ]
+      }
+    ],
+    "criteria": [
+      {
+        "id": "AC1",
+        "text": "段及连接接口在最后相关施工后0.8MPa连续试压30分钟无渗漏。"
+      },
+      {
+        "id": "AC2",
+        "text": "冲洗每秒不少于5升且连续不少于20分钟。"
+      },
+      {
+        "id": "AC3",
+        "text": "局部接管有有效隔离，相邻未验段不可直接连通供水。"
+      }
+    ]
+  },
+  "existing": [
+    {
+      "id": "H1",
+      "state": "accepted",
+      "segments": [
+        "L2A1"
+      ],
+      "source": "WA-H1"
+    },
+    {
+      "id": "H2",
+      "state": "pending",
+      "segments": [
+        "L2A2",
+        "B"
+      ]
+    }
+  ]
 }
